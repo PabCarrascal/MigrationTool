@@ -36,7 +36,14 @@ public class FileUtils {
   private static String createNewPath(File file) {
 
     String oldName = file.getName();
-    String newName = oldName + "-fixed" + oldName.substring(oldName.lastIndexOf("."));
-    return file.getPath().split(oldName)[0] + newName;
+    String extension = oldName.substring(oldName.lastIndexOf("."));
+    String oldNameWithExtension = oldName.split(extension)[0];
+    String newName = oldNameWithExtension + "-fixed" + extension;
+
+    try {
+      return file.getPath().split(oldName)[0] + newName;
+    } catch (Exception e) {
+        return newName;
+    }
   }
 }
