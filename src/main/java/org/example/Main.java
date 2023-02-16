@@ -8,7 +8,7 @@ public class Main {
   public static void main(String[] args) {
 
     Migrator migrator = new Migrator();
-    File jsonFile = new File(args[0]);
+    File jsonFile = FileUtils.checkFileExists(args[0]);
     String inputJson = FileUtils.readFile(jsonFile);
     FileUtils.writeFile(jsonFile, migrator.migrate(inputJson));
   }

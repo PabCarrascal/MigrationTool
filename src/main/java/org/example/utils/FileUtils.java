@@ -8,6 +8,11 @@ import java.io.IOException;
 
 public class FileUtils {
 
+  public static File checkFileExists(String path) {
+
+    return new File(path);
+  }
+
   public static String readFile(File file) {
 
     StringBuilder sb = new StringBuilder();
@@ -43,7 +48,7 @@ public class FileUtils {
     try {
       return file.getPath().split(oldName)[0] + newName;
     } catch (Exception e) {
-        return newName;
+      return newName;
     }
   }
 }
