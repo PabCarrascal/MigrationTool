@@ -11,5 +11,8 @@ public class Main {
     File jsonFile = FileUtils.checkFileExists(args[0]);
     String inputJson = FileUtils.readFile(jsonFile);
     FileUtils.writeFile(jsonFile, migrator.migrate(inputJson));
+
+    Creator creator = new Creator();
+    creator.parse(inputJson);
   }
 }
