@@ -1,7 +1,37 @@
 {
-  "dni": "000000000A",
-  "name": "Pablo",
-  "middleName": "",
-  "surname": "Carrascal",
-  "jobTitle": "Senior Developer"
+  "id_location": "24124",
+  "payment_methods": [
+    {
+      "device_channel": "device_channel1",
+      "device_type": "device_type1",
+      "id_payment_method": 1,
+      "name_payment_method": "name_payment_method1",
+      "attributes": [
+        {
+          "name": "name1",
+          "validation": "validation1",
+          "mandatory": false,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": false
+    },
+    {
+      "device_channel": "device_channel2",
+      "device_type": "device_type2",
+      "id_payment_method": 2,
+      "name_payment_method": "name_payment_method2",
+      "attributes": [
+        {
+          "name": "name2",
+          "validation": "validation2",
+          "mandatory": false,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": false
+    }
+  ]
 }

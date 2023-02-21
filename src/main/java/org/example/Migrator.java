@@ -2,24 +2,21 @@ package org.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.entities.Person;
-import org.example.entities.Worker;
-import org.example.mappers.WorkerMapper;
-import org.mapstruct.factory.Mappers;
+import org.example.entities.AlphaResponse;
+import org.example.entities.MongoJson;
+import org.example.mappers.MongoAlphaMapper;
 
 public class Migrator {
-
-  private final WorkerMapper mapper = Mappers.getMapper(WorkerMapper.class);
 
   public String migrate(String json) {
 
     String cad = "";
     ObjectMapper objectMapper = new ObjectMapper();
-    Person person;
+    AlphaResponse alphaResponse;
     try {
-      person = objectMapper.readValue(json, Person.class);
-      Worker worker = mapper.mapPersonToWorker(person);
-      cad = objectMapper.writeValueAsString(worker);
+      alphaResponse = objectMapper.readValue(json, AlphaResponse.class);
+      MongoJson mongoJson = MongoAlphaMapper.mapAlphaToMongo(alphaResponse);
+      cad = objectMapper.writeValueAsString(mongoJson);
     } catch (JsonProcessingException e) {
       throw new RuntimeException(e);
     }
