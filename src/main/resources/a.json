@@ -1,37 +1,396 @@
 {
-  "id_location": "24124",
+  "id_location": 9700,
   "payment_methods": [
     {
-      "device_channel": "device_channel1",
-      "device_type": "device_type1",
-      "id_payment_method": 1,
-      "name_payment_method": "name_payment_method1",
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1001,
+      "name_payment_method": "VISA",
       "attributes": [
         {
-          "name": "name1",
-          "validation": "validation1",
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{3}",
           "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_holder",
+          "validation": "[A-Z]{100}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_month",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_year",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "customer_email",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "callback_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "cardinal_session",
+          "validation": "",
+          "mandatory": true,
           "customer_visible": false,
           "is_ciphered": false
         }
       ],
-      "available": false
+      "available": true
     },
     {
-      "device_channel": "device_channel2",
-      "device_type": "device_type2",
-      "id_payment_method": 2,
-      "name_payment_method": "name_payment_method2",
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1016,
+      "name_payment_method": "AffinityCard",
       "attributes": [
         {
-          "name": "name2",
-          "validation": "validation2",
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{3}",
           "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_holder",
+          "validation": "[A-Z]{100}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_month",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_year",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_installments",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1013,
+      "name_payment_method": "GiftCard",
+      "attributes": [
+        {
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{3}",
+          "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1002,
+      "name_payment_method": "Mastercard",
+      "attributes": [
+        {
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{3}",
+          "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_holder",
+          "validation": "[A-Z]{100}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_month",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_year",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "customer_email",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "callback_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "cardinal_session",
+          "validation": "",
+          "mandatory": true,
           "customer_visible": false,
           "is_ciphered": false
         }
       ],
-      "available": false
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1003,
+      "name_payment_method": "AMEX",
+      "attributes": [
+        {
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{4}",
+          "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_holder",
+          "validation": "[A-Z]{100}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_month",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "card_year",
+          "validation": "[0-9]{2}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "customer_email",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "callback_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "cardinal_session",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1017,
+      "name_payment_method": "PayPal",
+      "attributes": [
+        {
+          "name": "customer_email",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": false
+        },
+        {
+          "name": "customer_locale",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "callback_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1023,
+      "name_payment_method": "ApplePay",
+      "attributes": [
+        {
+          "name": "customer_payment_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "token_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1024,
+      "name_payment_method": "GooglePay",
+      "attributes": [
+        {
+          "name": "customer_payment_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "token_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1015,
+      "name_payment_method": "EmployeeDiscount",
+      "attributes": [
+        {
+          "name": "card_pan",
+          "validation": "[0-9]{16}",
+          "mandatory": true,
+          "customer_visible": true,
+          "is_ciphered": true
+        },
+        {
+          "name": "card_cvv",
+          "validation": "[0-9]{3}",
+          "mandatory": false,
+          "customer_visible": true,
+          "is_ciphered": true
+        }
+      ],
+      "available": true
+    },
+    {
+      "device_channel": "app",
+      "device_type": "desktop",
+      "id_payment_method": 1056,
+      "name_payment_method": "Bizum",
+      "attributes": [
+        {
+          "name": "customer_payment_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        },
+        {
+          "name": "callback_data",
+          "validation": "",
+          "mandatory": true,
+          "customer_visible": false,
+          "is_ciphered": false
+        }
+      ],
+      "available": true
     }
   ]
 }

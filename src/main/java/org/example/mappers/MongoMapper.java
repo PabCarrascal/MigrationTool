@@ -15,8 +15,10 @@ import org.mapstruct.Mapping;
 public interface MongoMapper {
 
   @Mapping(target = "accounts", expression = "java(List.of(mapAlphaResponseToAccount(alphaResponse)))")
+  @Mapping(target = "channel", expression = "java(alphaResponse.getPayment_methods().get(0).getDevice_channel())")
+  @Mapping(target = "device", expression = "java(alphaResponse.getPayment_methods().get(0).getDevice_type())")
   @Mapping(target = "paymentMethods", source = "payment_methods")
-  MongoJson mapAlphaToMongo(AlphaResponse alphaResponse);
+  MongoJson mapAlphaResponseToMongoJson(AlphaResponse alphaResponse);
 
   @Mapping(target = "locationId", source = "id_location")
   Account mapAlphaResponseToAccount(AlphaResponse alphaResponse);
@@ -27,11 +29,10 @@ public interface MongoMapper {
   @Mapping(target = "active", source = "available")
   PaymentMethodMongo mapPaymentMethodAlphaToPaymentMethodMongo(PaymentMethodAlpha paymentMethodAlpha);
 
-  @Mapping(target = "attributeId", source = "id_payment_method")
-  @Mapping(target = "paymentMethodName", source = "name_payment_method")
   @Mapping(target = "attributePaymentMethodData", source = "attributes")
   AttributePaymentMethod mapPaymentMethodAlphaToAttributePaymentMethod(PaymentMethodAlpha paymentMethodAlpha);
 
+  @Mapping(target = "description", source = "name")
   @Mapping(target = "validation", source = "validation")
   @Mapping(target = "visible", source = "customer_visible")
   @Mapping(target = "required", source = "mandatory")
